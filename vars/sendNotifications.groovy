@@ -25,7 +25,7 @@ def call(String buildStatus = 'STARTED') {
   }
 
   // Send notifications
-  // slackSend (color: colorCode, message: summary)
+  slackSend (color: colorCode, message: summary)
   emailext (
       to: 'lemayiannakolah@gmail.com',
       subject: subject,
