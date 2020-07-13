@@ -32,4 +32,10 @@ def call(String buildStatus = 'STARTED') {
       body: details,
       recipientProviders: [[$class: 'DevelopersRecipientProvider']]
     )
+  // Send to teams
+  office365ConnectorSend (
+    color: colorCode,
+    message: summary,
+    webhookUrl: "${env.TEAMS_CI_HOOK}"
+  )
 }
